@@ -1,0 +1,30 @@
+// build.gradle
+
+plugins {
+    id 'java'
+}
+
+group 'com.example'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Add your dependencies here
+    // For example:
+    // implementation 'com.google.guava:guava:30.1-jre'
+}
+
+// Configure the build
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+// Define tasks
+task run(type: JavaExec) {
+    mainClassName = 'com.example.Main'
+    classpath sourceSets.main.runtimeClasspath
+}
