@@ -1,4 +1,7 @@
 # Marija Dimitrovska 145049
+Control Flow Graph
+Фотографија од control flow graph-ot именувана lab2.png
+
 TASK 2:
 Explanation of CFG:
 
@@ -11,15 +14,16 @@ E: Checks if the password doesn't contain any spaces and contains at least one s
 END: Exit point of the function.
 
 TASK 3:
-The first decision point is the if statement if (user==null || user.getPassword()==null || user.getEmail()==null). This creates two paths: one when the condition is true and an exception is thrown, and another when the condition is false.
-The second decision point is the if statement if (user.getUsername()==null). This creates two paths: one when the condition is true and the username is set, and another when the condition is false.
-The third decision point is the if statement if (user.getEmail().contains("@") && user.getEmail().contains(".")). This creates two paths: one when the condition is true, and the loop is executed, and another when the condition is false.
-Inside the loop, there are two more decision points: the if statements if (existingUser.getEmail() == user.getEmail()) and if (existingUser.getUsername() == user.getUsername()). Each if statement creates two paths: one when the condition is true and same is incremented, and another when the condition is false.
-The fifth decision point is the if statement if (passwordLower.contains(user.getUsername().toLowerCase()) || password.length()<8). 
-This creates two paths: one when the condition is true and the function returns false, and another when the condition is false.
-Inside the else block, there is an if statement if (!passwordLower.contains(" ")). This creates two paths: one when the condition is true, and the loop is executed, and another when the condition is false.
-Inside the loop, there is a for loop that iterates over the specialCharacters string. This loop has no decision points.
-Considering these decision points, we have a total of 2 x 2 x 2 x 2 x 2 = 32 paths through the code. Therefore, the cyclomatic complexity of the given code is 32 + 1 = 33.
+(predikatni jazli 10 ima +1 za kompleksnost)
+
+M = E - N + 2
+M = 11
+
+Where:
+M is the cyclomatic complexity
+E is the number of edges in the CFG
+N is the number of nodes in the CFG
+
 
 TASK 4:
 Test case for the branch where user, password, and email are not null (A -> B -> C -> D -> E -> END):
