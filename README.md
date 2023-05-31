@@ -1,6 +1,6 @@
 # Marija Dimitrovska 145049
 Control Flow Graph
-Фотографија од control flow graph-ot именувана lab2.png
+Фотографија од control flow graph-ot именувана cfg.png
 
 TASK 2:
 Explanation of CFG:
@@ -13,76 +13,29 @@ D: Checks if the password contains the username (case-insensitive) or its length
 E: Checks if the password doesn't contain any spaces and contains at least one special character. If true, returns the value of same == 0.
 END: Exit point of the function.
 
+
+
 TASK 3:
-(predikatni jazli 10 ima +1 za kompleksnost)
+(predikatni jazli 10 ima +1 za kompleksnost = 11 )
 
 M = E - N + 2
 M = 11
 
-Where:
-M is the cyclomatic complexity
-E is the number of edges in the CFG
-N is the number of nodes in the CFG
+37врски и 28 јазли.Со тоа имаме 37-28+2=11
 
 
 TASK 4:
-Test case for the branch where user, password, and email are not null (A -> B -> C -> D -> E -> END):
+Тест случаи според критериумот Every Branch
+User null => исполнет е првиот услов TXX
+User ("ana", "Password123!", "ana@gmail.com") => password има специјален знак и нема празно место
+User("jovan", "Password ?", "jovan@gmail.com") => password има специјален знак и има празно место
+User("tom", "Pass", "tom@gmail.com") => user за кој проверуваме дупликат password и email
+User("tom", "tom", "tom@gmailcom") => user со ист password и username и без точка во username
+User("eva", "Password123??", "eva@gmail.com") => нов user за кој програмата враќа TRUE
 
-Inputs:
-User: Valid User object with non-null username, password, and email.
-allUsers: Empty list or list of existing users.
-Expected outcome: The function should return false since the password meets the criteria, but there are no existing users to check for duplicates.
-Test case for the branch where user is null (A):
 
-Inputs:
-User: null
-allUsers: Empty list or list of existing users.
-Expected outcome: The function should throw a RuntimeException since the mandatory information is missing.
-Test case for the branch where password is null (A):
-
-Inputs:
-User: Valid User object with non-null username and email, but password is null.
-allUsers: Empty list or list of existing users.
-Expected outcome: The function should throw a RuntimeException since the mandatory information is missing.
-Test case for the branch where email is null (A):
-
-Inputs:
-User: Valid User object with non-null username and password, but email is null.
-allUsers: Empty list or list of existing users.
-Expected outcome: The function should throw a RuntimeException since the mandatory information is missing.
-Test case for the branch where username is null (A -> B):
-
-Inputs:
-User: Valid User object with non-null password and email, but username is null.
-allUsers: Empty list or list of existing users.
-Expected outcome: The function should set the username as the email and continue to the next branch.
-Test case for the branch where email and username are duplicates (A -> B -> C -> D):
-
-Inputs:
-User: Valid User object with non-null username, password, and email, where both email and username already exist in the list of existing users.
-allUsers: List of existing users containing a user with the same email and username.
-Expected outcome: The function should increment same twice but ultimately return false since the password contains the username.
-Test case for the branch where password contains the username (A -> B -> C -> D):
-
-Inputs:
-User: Valid User object with non-null username, password, and email, where the password contains the username (case-insensitive).
-allUsers: Empty list or list of existing users.
-Expected outcome: The function should return false since the password contains the username.
-Test case for the branch where password length is less than 8 (A -> B -> C -> D):
-
-Inputs:
-User: Valid User object with non-null username, password, and email, where the password length is less than 8 characters.
-allUsers: Empty list or list of existing users.
-Expected outcome: The function should return false since the password length is less than 8.
-Test case for the branch where password contains no spaces but at least one special character (A -> B -> C -> D -> E):
-
-Inputs:
-User: Valid User object with non-null username, password, and email, where the password contains no spaces but at least one special character.
-allUsers: Empty list or list of existing users.
-Expected outcome: The function should return
 
 TASK 5:
-
 Test case: Null user
 Explanation: In this test case, we pass a null user object. This should trigger the first condition user==null, resulting in the condition evaluating to true. The function should throw a RuntimeException with the message "Mandatory information missing!"
 
