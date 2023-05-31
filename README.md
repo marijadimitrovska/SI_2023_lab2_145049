@@ -31,11 +31,9 @@ TASK 4:
 Тест случаи според критериумот Every Branch
 1. User null => исполнет е првиот услов TXX
 2. User ("ana", "Password123!", "ana@gmail.com") => password има специјален знак и нема празно место
-3. User("jovan", "Password ?", "jovan@gmail.com") => password има специјален знак и има празно место
-4. User("tom", "Pass", "tom@gmail.com") => user за кој проверуваме дупликат password и email
-5. User("tom", "tom", "tom@gmailcom") => user со ист password и username и без точка во username
-6. User("eva", "Password123??", "eva@gmail.com") => нов user за кој програмата враќа TRUE
-
+3. User("tom", "Pass", "tom@gmail.com") => user за кој проверуваме дупликат password и email
+4. User("tom", "tom", "tom@gmailcom") => user со ист password и username и без точка во username
+5. User("eva", "Password123??", "eva@gmail.com") => нов user за кој програмата враќа TRUE
 
 
 TASK 5:
