@@ -5,18 +5,6 @@ Control Flow Graph
 ![Image](sfg.png)
 
 
-TASK 2:
-Explanation of CFG:
-
-START: Entry point of the function.
-A: Checks if the user or any of its properties are null. If true, throws a RuntimeException.
-B: Checks if the username is null. If true, sets the username as the email.
-C: Performs a loop over all existing users to check for email and username duplicates. Increments same if a duplicate is found.
-D: Checks if the password contains the username (case-insensitive) or its length is less than 8. If true, returns false.
-E: Checks if the password doesn't contain any spaces and contains at least one special character. If true, returns the value of same == 0.
-END: Exit point of the function.
-
-
 
 TASK 3:
 (predikatni jazli 10 ima +1 za kompleksnost = 11 )
