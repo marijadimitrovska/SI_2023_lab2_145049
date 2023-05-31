@@ -2,6 +2,9 @@
 Control Flow Graph
 Фотографија од control flow graph-ot именувана cfg.png
 
+![Image](/cfg.png)
+
+
 TASK 2:
 Explanation of CFG:
 
